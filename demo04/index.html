@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="name" content="content" charset= "utf-8">
     <script src="../build/react.js"></script>
     <script src="../build/JSXTransformer.js"></script>
   </head>
   <body>
     <div id="exampleid"></div>
     <div id="testid"></div>
+    <p id = "textid"></p>
     <script type="text/jsx">
       var HelloMessage = React.createClass({
         render: function() {
@@ -15,7 +17,7 @@
       });
 
       React.render(
-        <HelloMessage name="John" />,
+        <HelloMessage name="Qboooogle" />,
         document.getElementById('exampleid')
       );
 
@@ -26,8 +28,18 @@
       });
 
       React.render(
-        <MyTestMsg msg="hehe"/>,
+        <MyTestMsg msg="hello world"/>,
         document.getElementById('testid')
+      );
+      var MyText = React.createClass({
+        render: function(){
+          return <p>My msg here: {this.props.text}</p>;
+        }
+      });
+
+      React.render(
+        <MyText text="实例"/>,
+        document.getElementById('textid')
       );
     </script>
   </body>
