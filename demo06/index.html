@@ -9,44 +9,60 @@
     <div id="testid"></div>
     <div id="outputid"></div>
     <script type="text/jsx">
-var MyComponent = React.createClass({
-  handleClick: function() {
-    React.findDOMNode(this.refs.myTextInput).focus();
-  },
-  render: function() {
-    return (
-      <div>
-        <input type="text" ref="myTextInput" />
-        <input type="button" value="Focus the text input" onClick={this.handleClick} />
-      </div>
-    );
-  }
-});
+      var MyComponent = React.createClass({
+        handleClick: function() {
+          React.findDOMNode(this.refs.myTextInput).focus();
+        },
+        render: function() {
+          return (
+            <div>
+              <input type="text" ref="myTextInput" />
+              <input type="button" value="Focus the text input" onClick={this.handleClick} />
+            </div>
+          );
+        }
+      });
 
-React.render(
-  <MyComponent />,
-  document.getElementById('example')
-);
+      React.render(
+        <MyComponent />,
+        document.getElementById('example')
+      );
 
 
-var MyTestComp = React.createClass({
-  handler: function(){
-    React.findDOMNode(this.refs.myTestInput).focus();
-  },
-  render: function(){
-    return (
-      <div>
-        <input type="text" ref="myTestInput" />
-        <input type="button" value="Click" onClick={this.handler}/>
-      </div>
-    );
-  }
-});
+      var MyTestComp = React.createClass({
+        handler: function(){
+          React.findDOMNode(this.refs.myTestInput).focus();
+        },
+        render: function(){
+          return (
+            <div>
+              <input type="text" ref="myTestInput" />
+              <input type="button" value="Click" onClick={this.handler}/>
+            </div>
+          );
+        }
+      });
 
-React.render(
-  <MyTestComp />,
-  document.getElementById("testid")
-);
+      React.render(
+        <MyTestComp />,
+        document.getElementById("testid")
+      );
+
+      var MyTitle = React.createClass({
+        propTypes: {
+          title: React.PropTypes.string.isRequired,
+        },
+
+        render: function() {
+           return <h1> {this.props.title} </h1>;
+         }
+      });
+      var data = 123;
+
+      ReactDOM.render(
+        <MyTitle title={data} />,
+        document.body
+      );
     </script>
   </body>
 </html>
