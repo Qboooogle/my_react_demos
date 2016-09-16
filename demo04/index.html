@@ -5,7 +5,7 @@
     <script src="../build/JSXTransformer.js"></script>
   </head>
   <body>
-    <div id="example"></div>
+    <div id="exampleid"></div>
     <div id="testid"></div>
     <script type="text/jsx">
       var HelloMessage = React.createClass({
@@ -16,7 +16,7 @@
 
       React.render(
         <HelloMessage name="John" />,
-        document.getElementById('example')
+        document.getElementById('exampleid')
       );
 
       var MyTestMsg = React.createClass({
